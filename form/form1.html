@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>STUDENT INFO</title>
+  <link rel="stylesheet" type="text/css" href="theme.css">
+  </head>
+  <body>
+    {{if .Success}}
+      <h1>Welcome To The University, {{.Firstname}}</h1>
+      <p>As a {{.Major}} student, you would learn many things at this university</p>
+      <p>Thank you for your message</p>
+      <p>We will answer your question and send you email to {{.Email}} as soon as possible</p>
+      <p>Please! Check your email</p>
+    {{else}}
+      <div class="info">
+        <h1>Student Info</h1>
+        <form method="POST">
+            <label>First Name:</label><br />
+            <input type="text" name="firstname"><br />
+            <label>Last Name:</label><br />
+            <input type="text" name="lastname"><br />
+            <label>Email:</label><br />
+            <input type="text" name="email"><br />
+            <label>Major</label><br />
+            <input type="text" name="major"><br />
+            <label>Message:</label><br />
+            <textarea name="message"></textarea><br />
+            <input type="submit">
+        </form>
+      </div>
+    {{end}}
+
+  </body>
+</html>
