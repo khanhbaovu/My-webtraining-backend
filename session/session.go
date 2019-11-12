@@ -13,7 +13,7 @@ var (
 )
 
 func student(w http.ResponseWriter, r *http.Request) {
-  session,_ := store.Get(r,"cookieName")
+  session,_ := store.Get(r,"cookie-name")
 
   if auth, ok := session.Values["authenticated"].(bool); !auth || !ok {
     http.Error(w,"You are not Dalhousie Student", http.StatusForbidden)
@@ -27,7 +27,7 @@ func student(w http.ResponseWriter, r *http.Request) {
 }
 
 func login(w http.ResponseWriter, r *http.Request) {
-  session,_ := store.Get(r,"cookieName")
+  session,_ := store.Get(r,"cookie-name")
 
   fmt.Fprintf(w,"Welcome to DalOn")
   session.Values["authenticated"]  = true
@@ -35,7 +35,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 }
 
 func logout(w http.ResponseWriter, r *http.Request) {
-  session,_ := store.Get(r,"cookieName")
+  session,_ := store.Get(r,"cookie-name")
 
   fmt.Fprintf(w,"Bye Bye")
   session.Values["authenticated"] = false
