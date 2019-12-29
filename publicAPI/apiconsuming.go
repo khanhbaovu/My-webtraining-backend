@@ -26,6 +26,7 @@ type PokemonName struct {
 func main() {
     response,err := http.Get("http://pokeapi.co/api/v2/pokedex/kanto/")
 
+
     if err != nil {
       panic(err)
     }

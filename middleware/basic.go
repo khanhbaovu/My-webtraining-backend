@@ -9,8 +9,8 @@ import (
 
 func middleware(hd http.HandlerFunc) http.HandlerFunc {
   return func(w http.ResponseWriter, r *http.Request) {
-    hd(w,r)
     fmt.Fprintf(w,"This is the link of your account: %s", r.URL.Path)
+    hd(w,r)
   }
 }
 
