@@ -11,7 +11,7 @@ type Tag struct {
     Name string `json:"name"`
 }
 func main() {
-  connStr := "host=localhost port=5432 user=postgres password=Vbk02122000 dbname=postgres sslmode=disable"
+  connStr := "host=localhost port=5432 user=postgres password=inininub dbname=postgres sslmode=disable"
 
   db, err := sql.Open("postgres", connStr)
 
